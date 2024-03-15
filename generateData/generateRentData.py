@@ -1,4 +1,3 @@
-import csv
 import uuid
 import random
 from datetime import date, timedelta
@@ -65,7 +64,9 @@ for row in tenant_info_df.itertuples():
         )
         lease_start_date += timedelta(days=30)
     rent_dataset.extend(rent_row)
-print(rent_dataset)
+
+# print(rent_dataset)
+
 rent_info_df = pd.DataFrame(
     data=rent_dataset,
     columns=[
@@ -80,4 +81,5 @@ rent_info_df = pd.DataFrame(
         "Late_Payment"
     ]
 )
+
 rent_info_df.to_csv(path_or_buf="rentInformation.csv", index=False)
