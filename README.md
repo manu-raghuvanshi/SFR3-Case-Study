@@ -1,4 +1,4 @@
-# Background
+# SFR3 Case Study
 SFR3 is a boutique real estate investment fund acquiring $3.5B+ in affordable single-family homes by 2024. The Fund renovates distressed homes, using software-driven operations to run many “tertiary” markets concurrently. Today we own 10,500+ homes in 20 states, buying & building several hundred more every month.
 
 ## Prompt
