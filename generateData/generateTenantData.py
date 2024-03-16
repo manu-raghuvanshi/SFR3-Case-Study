@@ -3,12 +3,40 @@ import random
 from datetime import date, timedelta
 
 
-# initialize list of first names, list of last names
+# initialize list of first names, list of last names, Counties in Georgia, House Plans
 first_name = []
 last_name = []
+counties = [
+    "Appling",
+    "Atkinson",
+    "Bacon",
+    "Baker",
+    "Calhoun",
+    "Camden",
+    "Candler",
+    "Carroll",
+    "Mitchell",
+    "Monroe",
+    "Montgomery",
+    "Morgan",
+    "Murray",
+    "Pulaski",
+    "Putnam",
+    "Quitman",
+    "Rabun",
+    "Wheeler",
+    "White",
+    "Whitfield",
+]
+
+house_plans = [
+    "1BHK", "2BHK", "3BHK"
+]
 
 # read the listOfNames.csv file and populate the list initialized above
-with open("generateData/listOfNames.csv", newline="", encoding="utf-8-sig") as listOfNames:
+with open(
+    "generateData/listOfNames.csv", newline="", encoding="utf-8-sig"
+) as listOfNames:
     reader = csv.reader(listOfNames, delimiter=",")
     for row in reader:
         first_name.append(row[0])
@@ -27,10 +55,12 @@ with open("generateData/tenantInformation.csv", "w", newline="") as tenantInform
             "Utility_Amount",
             "Pet_Amount",
             "Tenant_Screening_Score",
+            "House_Plan",
+            "Counties"
         ]
     )
     # generate random data
-    for uuid in range(1, 20):
+    for uuid in range(1, 51):
         tenant_name = random.choice(first_name) + " " + random.choice(last_name)
         rent_amount = random.randint(15, 40) * 50
         lease_start_date = date(
@@ -47,6 +77,8 @@ with open("generateData/tenantInformation.csv", "w", newline="") as tenantInform
             pet_amount = 10.00
         tenant_screening_score = random.randint(538, 850)
         # https://www.turbotenant.com/blog/what-is-a-tenant-screening-report/
+        tenant_house_plan = random.choice(house_plans)
+        tenant_county = random.choice(counties)
         writer.writerow(
             [
                 uuid,
@@ -57,12 +89,9 @@ with open("generateData/tenantInformation.csv", "w", newline="") as tenantInform
                 utility_amount,
                 pet_amount,
                 tenant_screening_score,
+                tenant_house_plan,
+                tenant_county
             ]
         )
-        print(
-            f"UUID - {uuid}, Name - {tenant_name}, Rent Amount - {rent_amount}, "
-            f"Lease Start Date - {lease_start_date}, Lease End Date - {lease_end_date}, "
-            f"Utility Amount - {utility_amount}, Pet Amount - {pet_amount}, "
-            f"Tenant Screening Score - {tenant_screening_score}"
-        )
+
 tenantInformation.close()
