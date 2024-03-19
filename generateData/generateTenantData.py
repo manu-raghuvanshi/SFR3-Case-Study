@@ -60,7 +60,7 @@ with open("generateData/tenantInformation.csv", "w", newline="") as tenantInform
         ]
     )
     # generate random data
-    for uuid in range(1, 51):
+    for uuid in range(1, 101):
         tenant_name = random.choice(first_name) + " " + random.choice(last_name)
         rent_amount = random.randint(15, 40) * 50
         lease_start_date = date(

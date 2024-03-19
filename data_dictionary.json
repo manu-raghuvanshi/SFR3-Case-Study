@@ -1,25 +1,36 @@
 {
-  "tenantInformation": {
-          "UUID": "Primary Key for Tenant",
-          "Tenant_Name": "Full Name",
-          "Rent_Amount": "Base Rent",
-          "Lease_Start_Date": "Start date of lease",
-          "Lease_End_Date": "End Date of lease. Will be either 1,6, or 12 months from Lease_Start_Date",
-          "Utility_Amount": "Utility Amount. Assuming it is fixed",
-          "Pet_Amount": "Pet Amount. Assuming it is fixed",
-          "Tenant_Screening_Score": "Tenant Screening Score",
-          "House_Plan": "1bhk, 2bhk, 3bhk",
-          "Counties": "Counties of Georgia"
-},
-  "rentInformation": {
-          "Payment_ID": "Payment ID of Rent paid",
-          "Tenant_UUID": "Primary Key for Tenant (Acts as a Foreign Key in this table)",
-          "Tenant_Name": "Full Name",
-          "Month_year": "Month of Rent Paid",
-          "Rent_Paid_Date": "Date of Rent Paid",
-          "Rent_Amount_Paid": "Amount of Rent Paid",
-          "Total_Rent_Amount": "Total Rent Amount Supposed to be Paid",
-          "Rent_Amount_Due": "Rent Amount Not Paid",
-          "Late_Payment": "If the payment date is after 27th of a month, it is markes as late. Values - [Y, N]"
-  }
+        "tenantInformation": {
+                "UUID": "Primary Key for Tenant",
+                "Tenant_Name": "Full Name",
+                "Rent_Amount": "Base Rent",
+                "Lease_Start_Date": "Start date of lease",
+                "Lease_End_Date": "End Date of lease. Will be either 1,6, or 12 months from Lease_Start_Date",
+                "Utility_Amount": "Utility Amount. Assuming it is fixed",
+                "Pet_Amount": "Pet Amount. Assuming it is fixed",
+                "Tenant_Screening_Score": "Tenant Screening Score",
+                "House_Plan": "1bhk, 2bhk, 3bhk",
+                "Counties": "Counties of Georgia"
+        },
+        "rentInformation": {
+                "Payment_ID": "Primary Key of Rent paid",
+                "Tenant_UUID": "Primary Key for Tenant (Acts as a Foreign Key in this table)",
+                "Tenant_Name": "Full Name",
+                "Month_year": "Month of Rent Paid",
+                "Rent_Paid_Date": "Date of Rent Paid",
+                "Rent_Amount_Paid": "Amount of Rent Paid",
+                "Total_Rent_Amount": "Total Rent Amount Supposed to be Paid",
+                "Rent_Amount_Due": "Rent Amount Not Paid",
+                "Late_Payment": "If the payment date is after 27th of a month, it is markes as late. Values - [Y, N]"
+        },
+        "applicantInformation": {
+                "Applicant_UUID": "Primary Key for Applicants",
+                "Applicant_Name": "Full Name",
+                "Rent_Amount": "Base Rent",
+                "Lease_Start_Date": "Start date of lease",
+                "Lease_End_Date": "End Date of lease. Will be either 1,6, or 12 months from Lease_Start_Date",
+                "Applicant_Screening_Score": "Applicant Screening Score",
+                "House_Plan": "1bhk, 2bhk, 3bhk",
+                "Counties": "Counties of Georgia",
+                "Monthly_Income": "Monthly income of Applicant"
+        }
 }

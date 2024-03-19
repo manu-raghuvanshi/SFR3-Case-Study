@@ -55,16 +55,23 @@ with open("applicantInformation.csv", "w", newline="") as applicantInformation:
         ]
     )
     # generate random data
-    for uuid in range(1, 101):
+    for uuid in range(1, 201):
         applicant_uuid = "Applicant_" + str(uuid)
         applicant_name = random.choice(first_name) + " " + random.choice(last_name)
         rent_amount = random.randint(15, 40) * 50
         applicant_monthly_income = random.randint(15, 40) * 50 * random.randint(1, 10)
-        lease_start_date = date(
-            2023,
-            random.choice([month for month in range(1, 13)]),
-            random.choice([day for day in range(1, 31)]),
-        )
+        try:
+            lease_start_date = date(
+                2023,
+                random.choice([month for month in range(1, 13)]),
+                random.choice([day for day in range(1, 31)]),
+            )
+        except ValueError:
+            payment_date = date(
+                year=lease_start_date.year,
+                month=lease_start_date.month,
+                day=28,
+            )
         lease_end_date = lease_start_date + timedelta(
             days=random.choice([30, 180, 365])
         )
