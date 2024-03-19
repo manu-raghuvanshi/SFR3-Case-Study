@@ -16,6 +16,6 @@
 - `sfr3.ipynb`: Python code that includes
   - Data loading e.g.: Tenant, Rent, and Applicant
   - Data cleansing
-  - Data transforming
+  - Data transformation
   - Data Visualization
   - Analytics summary of data analysis
